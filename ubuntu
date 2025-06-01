@@ -1,5 +1,21 @@
 install ubuntu on Oracle virtualBox
-1\download ubuntu iso file from https://ubuntu.com/download/alternative-downloads
+can't execute "sudo apt uypdate"
+1. download ubuntu iso file from https://ubuntu.com/download/alternative-downloads
+2.change the connection as bridage 
+3. if encounter can't 'sudo apt update'
+  3.1 check ping baidu.com,if can't, this need config DNS server :
+      sudo nano /etc/resolv.conf
+      add the folowwing content:
+      nameserver 8.8.8.8
+      nameserver 1.1.1.1
+      if in china,add：
+      nameserver 223.5.5.5
+      nameserver 114.114.114.114
+4. if you can ping www.baidu.com, but can't "sudo apt update"
+  replace the source to aliyun mirror.
+  sudo sed -i 's|http://.*.ubuntu.com|http://mirrors.aliyun.com|g' /etc/apt/sources.list
+
+  
 
 
 
