@@ -32,5 +32,42 @@ check whether successful:
    poetry --version
 
 
+Install postgresql server:
+  sudo apt update
+  sudo apt install postgresql postgresql-contrib
+      postgresql：安装数据库核心服务。
+      postgresql-contrib：安装官方附加功能包（推荐）。
+
+  check postgresql status:
+  sudo systemctl status postgresql
+
+  switch postgresql default user:
+  sudo -i -u postgres
+  exec postgresql command:
+  psql
+  exit postgre user:
+  exit
+  exit postgre:
+  ctrl + D
+
+  create database and user 
+    CREATE USER myuser WITH PASSWORD 'mypassword';
+    CREATE DATABASE mydb OWNER myuser;
+    GRANT ALL PRIVILEGES ON DATABASE mydb TO myuser;
+  expose remote connection :
+  step1.
+     sudo nano /etc/postgresql/15/main/postgresql.conf
+     change #listen_addresses = 'localhost' as listen_addresses = '*'
+  step2.
+     sudo nano /etc/postgresql/15/main/pg_hba.conf
+     add a new line:
+     host    all             all             0.0.0.0/0               md5
+  step3.
+    sudo systemctl restart postgresql
+
+    
+
+
+
 
 
