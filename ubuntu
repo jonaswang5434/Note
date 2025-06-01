@@ -15,6 +15,8 @@ can't execute "sudo apt uypdate"
   replace the source to aliyun mirror.
   sudo sed -i 's|http://.*.ubuntu.com|http://mirrors.aliyun.com|g' /etc/apt/sources.list
 
+vs code connect ubuntu.
+if can't connect ,maybe ubuntu not install openssh-server,so we need execute "sudo apt install openssh-server" on ubuntu terminal.
   
 
 
