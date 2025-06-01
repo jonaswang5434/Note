@@ -17,7 +17,20 @@ can't execute "sudo apt uypdate"
 
 vs code connect ubuntu.
 if can't connect ,maybe ubuntu not install openssh-server,so we need execute "sudo apt install openssh-server" on ubuntu terminal.
-  
+
+
+can't find poetry after exec "pip3 install poetry"
+
+check poetry:
+  "pip3 show poetry"
+check poetry path:
+  "which poetry"
+add poetry into enverionment:
+  echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+  source ~/.bashrc
+check whether successful:
+   poetry --version
+
 
 
 
