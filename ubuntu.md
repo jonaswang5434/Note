@@ -65,6 +65,16 @@ Install postgresql server:
   step3.
     sudo systemctl restart postgresql
 
+
+wget can't access oversease websit:
+set proxy to solve this issue,把下面内容加到你的 ~/.bashrc 或 ~/.zshrc：
+  export http_proxy=http://127.0.0.1:7890
+  export https_proxy=http://127.0.0.1:7890
+  export ftp_proxy=http://127.0.0.1:7890
+  export no_proxy="localhost,127.0.0.1,::1"
+
+and then execute:
+  source ~/.bashrc   # 或者 source ~/.zshrc
     
 
 
